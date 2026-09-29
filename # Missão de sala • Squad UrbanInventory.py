@@ -7,14 +7,14 @@ equipamentos = [
     {"id": "Monitor 1", "setor": "UTI", "dias": 100, "revisado": True}
 ]
 
-# Tarefa 1: Usar all() para checar se todos os equipamentos estão dentro do prazo de revisão (ex: menos de 180 dias)
+# Tarefa 1: 
 todos_no_prazo = all(eq["dias"] < 180 for eq in equipamentos)
 print(f"1. Todos os equipamentos estão no prazo de revisão? {todos_no_prazo}")
 
-# Tarefa 2: Usar any() para checar se existe algum equipamento da UTI sem revisão (revisado = False)
+# Tarefa 2:
 uti_sem_revisao = any(eq["setor"] == "UTI" and not eq["revisado"] for eq in equipamentos)
 print(f"2. Existe algum equipamento da UTI sem revisão? {uti_sem_revisao}")
 
-# Tarefa 3: Usar list comprehension para pegar só os IDs dos equipamentos com problema (não revisados ou com dias > 180)
+# Tarefa 3:
 ids_com_problema = [eq["id"] for eq in equipamentos if not eq["revisado"] or eq["dias"] > 180]
 print(f"3. IDs dos equipamentos com problema: {ids_com_problema}")
